@@ -24,17 +24,21 @@ def buscar_contato(contato):
 def enviar_figurinha():
     icone_emoji = driver.find_element_by_xpath('//*[contains(@class, "nw8RZ _1isZ2")]')
     icone_emoji.click()
+
     time.sleep(3)
+
     aba_figurinha = driver.find_element_by_xpath('//button[contains(concat(" ",normalize-space(@class)," ")," _37evB ")][contains(concat(" ",normalize-space(@class)," ")," _16P6V ")][contains(concat(" ",normalize-space(@class)," ")," _3x5p4 ")][contains(concat(" ",normalize-space(@class)," ")," _3guyl ")]')
     aba_figurinha.click()
     time.sleep(7)
-    pacote_figurinha = driver.find_element_by_xpath('//body//div[@id='app']//footer//div//div//div//div//div//div//div[1]//div[1]//div[1]//div[2]')
-    pacote_figurinha.click()
-    time.sleep(3)
 
-    for i in range(1, 90):
-        figurinha = driver.find_element_by_xpath('//body//div[@id='app']//footer//div//div//div//div//div[2]//div[1]//div[1]//div[' + i +']')
-        figurinha.click()
+    for i in range (2, 5):
+        pacote_figurinha = driver.find_element_by_xpath('//body//div[@id='app']//footer//div//div//div//div//div//div//div[1]//div[1]//div[1]//div[2]')
+        pacote_figurinha.click()
+        time.sleep(3)
+
+        for i in range(1, 90):
+            figurinha = driver.find_element_by_xpath('//body//div[@id='app']//footer//div//div//div//div//div[2]//div[1]//div[1]//div[' + i +']')
+            figurinha.click()
 
 for contato in contatos:
     buscar_contato(contato)
