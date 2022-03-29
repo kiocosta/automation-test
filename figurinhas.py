@@ -28,10 +28,10 @@ def enviar_figurinha():
     aba_figurinha = driver.find_element_by_xpath('//button[contains(concat(" ",normalize-space(@class)," ")," _37evB ")][contains(concat(" ",normalize-space(@class)," ")," _16P6V ")][contains(concat(" ",normalize-space(@class)," ")," _3x5p4 ")][contains(concat(" ",normalize-space(@class)," ")," _3guyl ")]')
     aba_figurinha.click()
     time.sleep(7)
-    pacote_figurinha = driver.find_element_by_xpath('//**[contains(concat( " ", @class, " " ), concat( " ", "_1zlQ1", " " )) and (((count(preceding-sibling::) + 1) = 4) and parent::**)]//[contains(concat( " ", @class, " " ), concat( " ", "_1VzZY", " " ))]')
+    pacote_figurinha = driver.find_element_by_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "_1zlQ1", " " )) and (((count(preceding-sibling::) + 1) = 4) and parent::*)]//[contains(concat( " ", @class, " " ), concat( " ", "_1VzZY", " " ))]')
     pacote_figurinha.click()
     time.sleep(3)
-    figurinha = driver.find_element_by_xpath('//**([contains(concat( " ", @class, " " ), concat( " ", "_2elZc", " " )) and (((count(preceding-sibling::**) + 1) = 5) and parent::**)]//**[contains(concat( " ", @class, " " ), concat( " ", "_2YpcJ", " " ))]')
+    figurinha = driver.find_element_by_xpath('//*([contains(concat( " ", @class, " " ), concat( " ", "_2elZc", " " )) and (((count(preceding-sibling::*) + 1) = 5) and parent::*)]//*[contains(concat( " ", @class, " " ), concat( " ", "_2YpcJ", " " ))]')
     figurinha.click()
 
 for contato in contatos:
