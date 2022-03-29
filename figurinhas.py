@@ -8,9 +8,9 @@ driver = webdriver.Chrome(PATH)
 
 driver.get('https://web.whatsapp.com/')
 time.sleep(10)
-print('ok')
 contatos = ['Renanminiskov']
-mensagem = 'eae véi'
+
+
 
 def buscar_contato(contato):
     print(contato)
@@ -28,11 +28,13 @@ def enviar_figurinha():
     aba_figurinha = driver.find_element_by_xpath('//button[contains(concat(" ",normalize-space(@class)," ")," _37evB ")][contains(concat(" ",normalize-space(@class)," ")," _16P6V ")][contains(concat(" ",normalize-space(@class)," ")," _3x5p4 ")][contains(concat(" ",normalize-space(@class)," ")," _3guyl ")]')
     aba_figurinha.click()
     time.sleep(7)
-    pacote_figurinha = driver.find_element_by_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "_1zlQ1", " " )) and (((count(preceding-sibling::*) + 1) = 4) and parent::*)]//*[contains(concat( " ", @class, " " ), concat( " ", "_3hl6E", " " ))]')
+    pacote_figurinha = driver.find_element_by_xpath('//body//div[@id='app']//footer//div//div//div//div//div//div//div[1]//div[1]//div[1]//div[2]')
     pacote_figurinha.click()
     time.sleep(3)
-    figurinha = driver.find_element_by_xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "_2elZc", " " )) and (((count(preceding-sibling::*) + 1) = 5) and parent::*)]//*[contains(concat( " ", @class, " " ), concat( " ", "_1wurn", " " ))]')
-    figurinha.click()
+
+    for i in range(1, 90):
+        figurinha = driver.find_element_by_xpath('//body//div[@id='app']//footer//div//div//div//div//div[2]//div[1]//div[1]//div[' + i +']')
+        figurinha.click()
 
 for contato in contatos:
     buscar_contato(contato)
